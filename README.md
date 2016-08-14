@@ -27,6 +27,9 @@ This provides two functions:
   * `vigenere:decrypt(code, cypher_text)` decrypts the `cypher_text` using the key `code` provided.
   * `vigenere:encrypt(code, plain_text)` encrypts the `plain_text` using the key `code` provided.
 
+The namespace URI for these functions is `urn:x-vigenere:function`. You need to declare
+this namespace in any XSLT stylesheets that use this library.
+
 The libraries make use of a [Tabula recta](https://en.wikipedia.org/wiki/Tabula_recta). I
 could have used modular arithmetic to perform the encryption and decryption, but I found
 this method easier to visualise.
@@ -43,21 +46,21 @@ Properties](http://docs.oracle.com/javase/7/docs/api/java/util/Properties.html) 
 (The choice of this format is not particularly significant; it’s just a handy,
 established XML format for storing key / value pairs.)
 
-The source file must contain a `code` entry containing the key code, and either a `plain`
-entry containing plain text or a `cypher` entry containing cypher text. If the `cypher`
-entry is present, the stylesheet decrypts the cypher text; otherwise, if the `plain`
-entry is present, the stylesheet encrypts the plain text.
+The source file must contain a `code` entry containing the key code, and any number of
+`plain` entries containing plain text and / or `cypher` entries containing cypher text.
+Wherever the stylesheet finds a `cypher` entry, it decrypts the cypher text; wherever the
+stylesheet finds a `plain` entry, it encrypts the plain text.
 
 I’ve also provided a few example files.
 
 ### Examples
 
 <pre>
-	xsltproc Vigenere.xsl Feel_the_Fear.xml
+xsltproc Vigenere.xsl Feel_the_Fear.xml
 </pre>
 
 <pre>
-	xsltproc Vigenere.xsl Red_Shift.xml
+xsltproc Vigenere.xsl Red_Shift.xml
 </pre>
 
 ### Note
@@ -65,9 +68,8 @@ I’ve also provided a few example files.
 It’s possible to use the decryption operation on plain text, giving a different cypher
 text to what you would get using the encryption operation. Cypher text encrypted in this
 way must be decrypted using the encryption operation. An example of this is shown in the
-file `Red_Shift.xml`. The cypher text has been encrypted using the decription operation.
-It is stored in the `plain` entry in the source file; this forces the demo stylesheet to
-decrypt it using the encryption operation.
+file `Red_Shift.xml`. The cypher text in this source file is stored in the `plain` entry;
+this forces the demo stylesheet to decrypt it using the encryption operation.
 
 
 

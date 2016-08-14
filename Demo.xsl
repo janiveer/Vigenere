@@ -32,30 +32,12 @@
   <xsl:include href="Vigenere.xsl"/>
 
   <xsl:template match="properties">
-    <xsl:variable name="code"   select="entry[@key='code']/text()"/>
-    <xsl:variable name="cypher" select="entry[@key='cypher']/text()"/>
-    <xsl:variable name="plain"  select="entry[@key='plain']/text()"/>
+    <xsl:variable name="code" select="entry[@key='code']/text()"/>
     <xsl:choose>
       <xsl:when test="$code">
-        <xsl:choose>
-          <xsl:when test="$cypher">
-            <xsl:value-of select="vigenere:decrypt($code, $cypher)"/>
-            <xsl:text>&#x0d;&#x0a;</xsl:text>
-          </xsl:when>
-          <xsl:otherwise>
-            <xsl:choose>
-              <xsl:when test="$plain">
-                <xsl:value-of select="vigenere:encrypt($code, $plain)"/>
-                <xsl:text>&#x0d;&#x0a;</xsl:text>
-              </xsl:when>
-              <xsl:otherwise>
-                <xsl:message terminate="yes">
-                  <xsl:text>No cypher text or plain text found.</xsl:text>
-                </xsl:message>
-              </xsl:otherwise>
-            </xsl:choose>
-          </xsl:otherwise>
-        </xsl:choose>
+        <xsl:apply-templates select="entry[@key='cypher']|entry[@key='plain']">
+          <xsl:with-param name="code" select="$code"/>
+        </xsl:apply-templates>
       </xsl:when>
       <xsl:otherwise>
         <xsl:message terminate="yes">
@@ -63,6 +45,18 @@
         </xsl:message>
       </xsl:otherwise>
     </xsl:choose>
+  </xsl:template>
+
+  <xsl:template match="entry[@key='cypher']">
+    <xsl:param name="code"/>
+    <xsl:value-of select="vigenere:decrypt($code, text())"/>
+    <xsl:text>&#x0d;&#x0a;</xsl:text>
+  </xsl:template>
+
+  <xsl:template match="entry[@key='plain']">
+    <xsl:param name="code"/>
+    <xsl:value-of select="vigenere:encrypt($code, text())"/>
+    <xsl:text>&#x0d;&#x0a;</xsl:text>
   </xsl:template>
 
 </xsl:stylesheet>
