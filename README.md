@@ -55,12 +55,18 @@ I’ve also provided a few example files.
 
 ### Examples
 
-<pre>
-xsltproc Vigenere.xsl Feel_the_Fear.xml
-</pre>
+You can use the files in the `examples` folder to try out different key codes and crack
+the cypher:
 
 <pre>
-xsltproc Vigenere.xsl Red_Shift.xml
+xsltproc Vigenere.xsl examples/Feel_the_Fear.xml
+</pre>
+
+The files in the `spoilers` folder already contain the correct key codes, so don’t peek
+if you want to solve them yourself!
+
+<pre>
+xsltproc Vigenere.xsl spoilers/Red_Shift.xml
 </pre>
 
 ### Note
