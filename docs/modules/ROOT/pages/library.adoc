@@ -1,0 +1,16 @@
+= Library
+
+The *Vigenere.xsl* library provides two functions:
+
+* `+vigenere:decrypt(code, cypher_text)+` decrypts the `+cypher_text+` using the key `+code+` provided.
+* `+vigenere:encrypt(code, plain_text)+` encrypts the `+plain_text+` using the key `+code+` provided.
+
+The namespace URI for these functions is `+urn:x-vigenere:function+`.
+You need to declare this namespace in any XSLT stylesheets that use this library.
+
+The library makes use of a https://en.wikipedia.org/wiki/Tabula_recta[Tabula recta].
+I could have used modular arithmetic to perform the encryption and decryption, but I found this method easier to visualise.
+
+The `+plain_text+` and the `+cypher_text+` must _only_ contain lower case alphabetical characters with no accents; i.e. no numbers, spaces or punctuation.
+This is not enforced by the library at the moment.
+If this condition is not met, the library will generate incorrect results.

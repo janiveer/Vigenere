@@ -1,0 +1,5 @@
+name: vigenere
+title: Vigenère
+version: v1
+nav:
+- modules/ROOT/nav.adoc
