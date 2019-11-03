@@ -8,6 +8,9 @@ This is an XSLT library which enables you to encrypt plain text or decrypt cyphe
 It’s almost completely useless for security purposes.
 However this cypher turns up relatively frequently in the books I’ve been reading lately, so I wrote this library for fun and convenience.
 
+.Blaise de Vigenère, who didn't invent this cypher
+image::Vigenere.png[Blaise de Vigenère]
+
 The name Vigenère properly includes a grave accent.
 I’ve omitted the accent in file names, namespaces, namespace prefixes and repository names, to avoid possible problems with accented characters.
 I know, it shouldn’t be a problem in this day and age, but still…
