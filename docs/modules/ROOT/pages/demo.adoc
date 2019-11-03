@@ -3,7 +3,7 @@
 
 The *Demo.xsl* stylesheet demonstrates how the library works.
 It reads a source file in {xml-java-props}[XML Java Properties] format.
-include::antora-demo::partial$xml-java-props.adoc[]
+include::master@antora-demo::partial$xml-java-props.adoc[]
 
 The source file must contain a `code` entry containing the key code, and any number of `plain` entries containing plain text and / or `cypher` entries containing cypher text.
 Wherever the stylesheet finds a `cypher` entry, it decrypts the cypher text; wherever the stylesheet finds a `plain` entry, it encrypts the plain text.
