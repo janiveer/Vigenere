@@ -1,3 +1,2 @@
-* xref:ROOT:index.adoc[Introduction]
-** xref:ROOT:library.adoc[Library]
-** xref:ROOT:demo.adoc[Demonstration]
+* xref::library.adoc[Library]
+* xref::demo.adoc[Demonstration]
