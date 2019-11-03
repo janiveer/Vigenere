@@ -4,7 +4,9 @@
 :exslt: http://exslt.org/
 :xsltproc: http://xmlsoft.org/libxslt/
 
-Vigenère cypher library for XSLT
+****
+Version {page-version}
+****
 
 == Introduction
 
