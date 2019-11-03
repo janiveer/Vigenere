@@ -1,4 +1,5 @@
 = Library
+:tabula-recta: https://en.wikipedia.org/wiki/Tabula_recta
 
 The *Vigenere.xsl* library provides two functions:
 
@@ -8,7 +9,7 @@ The *Vigenere.xsl* library provides two functions:
 The namespace URI for these functions is `+urn:x-vigenere:function+`.
 You need to declare this namespace in any XSLT stylesheets that use this library.
 
-The library makes use of a https://en.wikipedia.org/wiki/Tabula_recta[Tabula recta].
+The library makes use of a {tabula-recta}[Tabula recta].
 I could have used modular arithmetic to perform the encryption and decryption, but I found this method easier to visualise.
 
 The `+plain_text+` and the `+cypher_text+` must _only_ contain lower case alphabetical characters with no accents; i.e. no numbers, spaces or punctuation.

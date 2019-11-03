@@ -1,10 +1,14 @@
 = Vigenère
+:vigenere-cypher: https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher
+:xslt: http://www.w3.org/TR/xslt
+:exslt: http://exslt.org/
+:xsltproc: http://xmlsoft.org/libxslt/
 
 Vigenère cypher library for XSLT
 
 == Introduction
 
-This is an XSLT library which enables you to encrypt plain text or decrypt cypher text using the https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher[Vigenère cypher].
+This is an XSLT library which enables you to encrypt plain text or decrypt cypher text using the {vigenere-cypher}[Vigenère cypher].
 It’s almost completely useless for security purposes.
 However this cypher turns up relatively frequently in the books I’ve been reading lately, so I wrote this library for fun and convenience.
 
@@ -17,5 +21,5 @@ I know, it shouldn’t be a problem in this day and age, but still…
 
 == Prerequisites
 
-An XSLT processor compatible with http://www.w3.org/TR/xslt[XSLT 1.0 or 1.1] and http://exslt.org/[eXSLT].
-It works with http://xmlsoft.org/libxslt/[XSLTProc].
+An XSLT processor compatible with {xslt}[XSLT 1.0 or 1.1] and {exslt}[eXSLT].
+It works with {xsltproc}[XSLTProc].

@@ -1,27 +1,25 @@
 = Demonstration
+:xml-java-props: http://docs.oracle.com/javase/7/docs/api/java/util/Properties.html
 
 The *Demo.xsl* stylesheet demonstrates how the library works.
-It reads a source file in http://docs.oracle.com/javase/7/docs/api/java/util/Properties.html[XML Java Properties] format.
+It reads a source file in {xml-java-props}[XML Java Properties] format.
 (The choice of this format is not particularly significant; it’s just a handy, established XML format for storing key / value pairs.)
 
-The source file must contain a `+code+` entry containing the key code, and any number of `+plain+` entries containing plain text and / or `+cypher+` entries containing cypher text.
-Wherever the stylesheet finds a `+cypher+` entry, it decrypts the cypher text; wherever the stylesheet finds a `+plain+` entry, it encrypts the plain text.
+The source file must contain a `code` entry containing the key code, and any number of `plain` entries containing plain text and / or `cypher` entries containing cypher text.
+Wherever the stylesheet finds a `cypher` entry, it decrypts the cypher text; wherever the stylesheet finds a `plain` entry, it encrypts the plain text.
 
 I’ve also provided a few example files.
 
 == Examples
 
-You can use the files in the `+examples+` folder to try out different key codes and crack the cypher.
+You can use the files in the `examples` folder to try out different key codes and crack the cypher.
 
-The files in the `+spoilers+` folder already contain the correct key codes, so don’t peek if you want to solve them yourself!
+The files in the `spoilers` folder already contain the correct key codes, so don’t peek if you want to solve them yourself!
 
 [NOTE]
 ====
-It’s possible to use the decryption operation on plain text, giving a
-different cypher text to what you would get using the encryption
-operation. Cypher text encrypted in this way must be decrypted using the
-encryption operation. An example of this is shown in the file
-`+Red_Shift.xml+`. The cypher text in this source file is stored in the
-`+plain+` entry; this forces the demo stylesheet to decrypt it using the
-encryption operation.
+It’s possible to use the decryption operation on plain text, giving a different cypher text to what you would get using the encryption operation.
+Cypher text encrypted in this way must be decrypted using the encryption operation.
+An example of this is shown in the file `Red_Shift.xml`.
+The cypher text in this source file is stored in the `plain` entry; this forces the demo stylesheet to decrypt it using the encryption operation.
 ====
