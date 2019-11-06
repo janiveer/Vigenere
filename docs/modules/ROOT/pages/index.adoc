@@ -3,12 +3,16 @@
 :xslt: http://www.w3.org/TR/xslt
 :exslt: http://exslt.org/
 :xsltproc: http://xmlsoft.org/libxslt/
+:imagesdir: ../assets/images
 
 ****
 Version {page-version}
 ****
 
 == Introduction
+
+Choose the menu:File[Exit] command.
+When the confirmation dialog appears, press btn:[OK] or press kbd:[Enter].
 
 This is an XSLT library which enables you to encrypt plain text or decrypt cypher text using the {vigenere-cypher}[Vigenère cypher].
 It’s almost completely useless for security purposes.
